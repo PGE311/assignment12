@@ -129,4 +129,5 @@ dmypy.json
 .pyre/
 
 # No changes to workflows
-.github
+.github/
+.gitignore
