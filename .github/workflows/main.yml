@@ -1,21 +1,28 @@
 env:
-  ASSIGNMENT: assignment12
+    ASSIGNMENT: assignment12
 on: push
 jobs:
-  conda:
+  test:
     runs-on: "ubuntu-latest"
     steps:
       - uses: actions/checkout@v2
-      - uses: mamba-org/provision-with-micromamba@main
-        with:
-          environment-file: environment.yml
+      - name: Fetch environment file
+        shell: bash -l {0}
+        run: |
+          curl \
+          --header 'Authorization: token ${{secrets.PGE311_SECRET_TOKEN}}' \
+          --header 'Accept: application/vnd.github.v3.raw' \
+          -O --location "https://api.github.com/repos/PGE311/${ASSIGNMENT}/contents/environment.yml"
       - name: Fetch Tests 
         shell: bash -l {0}
         run: |
           curl \
-          --header 'Authorization: token ${{secrets.PGE310_SECRET_TOKEN}}' \
+          --header 'Authorization: token ${{secrets.PGE311_SECRET_TOKEN}}' \
           --header 'Accept: application/vnd.github.v3.raw' \
-          -O --location "https://api.github.com/repos/PGE310/${ASSIGNMENT}/contents/test.py"
+          -O --location "https://api.github.com/repos/PGE311/${ASSIGNMENT}/contents/test.py"
+      - uses: mamba-org/provision-with-micromamba@main
+        with:
+          environment-file: environment.yml
       - name: Run Tests 
         shell: bash -l {0}
         run: python -m unittest test.py -vvv

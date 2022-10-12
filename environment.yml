@@ -3,8 +3,7 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - ipython=8.1.1
   - nbconvert=6.4.5
-  - numpy=1.22.2
   - python=3.10.2
-  - ipython_genutils=0.2.0
+  - ipython=8.1.1
+  - numpy=1.22.2
