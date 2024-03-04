@@ -1,6 +1,6 @@
 # Homework Assignment 12
 
-![Assignment 12](https://github.com/PGE311/assignment12-solution/workflows/.github/workflows/main.yml/badge.svg)
+![Assignment 12](https://github.com/PGE311/assignment12/workflows/.github/workflows/main.yml/badge.svg)
 
 Open the [Assignment 12 Jupyter Notebook](assignment12.ipynb) and follow the instructions.
 
