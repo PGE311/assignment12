@@ -3,6 +3,6 @@ channels:
   - conda-forge
 dependencies:
   - python=3.11.9
+  - numpy=2.4.2
   - ipython=9.10.0
   - nbconvert=7.17.0
-  - numpy=2.4.2
