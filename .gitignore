@@ -131,3 +131,7 @@ dmypy.json
 # No changes to workflows
 .github/
 .gitignore
+
+# SSH deploy keys
+id_ed25519_assignment12
+id_ed25519_assignment12.pub
